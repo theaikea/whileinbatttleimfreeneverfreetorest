@@ -94,7 +94,6 @@ export default {
             const stream = this.canvas.elt.captureStream(30); // Fang canvas stream ved 30fps
             this.recorder = new RecordRTC(stream, {
                 type: "video",
-                mimeType: "video/mp4", // Specify MP4 as the mime type
             });
             this.recorder.startRecording();
         },
@@ -106,7 +105,7 @@ export default {
                     const a = document.createElement("a");
                     a.style.display = "none";
                     a.href = url;
-                    a.download = "recording.mp4"; // Change file extension to .mp4
+                    a.download = "recording.webm";
                     document.body.appendChild(a);
                     a.click();
                     URL.revokeObjectURL(url);
